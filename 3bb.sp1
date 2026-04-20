@@ -25,21 +25,21 @@ function Show-Menu {
 }
 
 function Do-Unlock {
-    update.exe bulkcmd "setenv -f EnableSelinux permissive"
-    update.exe bulkcmd "env set lock 0"
-    update.exe bulkcmd "env set avb2 0"
-    update.exe bulkcmd "env set oem_lock unlock"
-    update.exe bulkcmd "store rom_protect off"
+    ./update.exe bulkcmd "setenv -f EnableSelinux permissive"
+    ./update.exe bulkcmd "env set lock 0"
+    ./update.exe bulkcmd "env set avb2 0"
+    ./update.exe bulkcmd "env set oem_lock unlock"
+    ./update.exe bulkcmd "store rom_protect off"
 
-    update.exe bulkcmd "keyman init 0x1234"
-    update.exe bulkcmd "keyman write usid str 1234567890"
-    update.exe bulkcmd "keyman read usid"
+    ./update.exe bulkcmd "keyman init 0x1234"
+    ./update.exe bulkcmd "keyman write usid str 1234567890"
+    ./update.exe bulkcmd "keyman read usid"
 
-    update.exe bulkcmd "saveenv"
-    update.exe bulkcmd fastboot
+    ./update.exe bulkcmd "saveenv"
+    ./update.exe bulkcmd fastboot
     wait.exe 5
-    fastboot.exe getvar all
-    fastboot reboot fastboot
+    ./fastboot.exe getvar all
+    ./fastboot reboot fastboot
 
     Write-Host ""
     Read-Host "Press ENTER to return to menu"
