@@ -37,7 +37,6 @@ function Do-Unlock {
 
     ./update.exe bulkcmd "saveenv"
     ./update.exe bulkcmd fastboot
-    wait.exe 5
     ./fastboot.exe getvar all
     ./fastboot reboot fastboot
 
