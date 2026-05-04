@@ -1,4 +1,6 @@
 # TOOL_Unlock - PowerShell Version (English Only)
+# By Pawarit Sosirikul Up 4/5/69
+# TEL 0842781903
 
 Set-Location -Path (Split-Path -Parent $MyInvocation.MyCommand.Path)
 
